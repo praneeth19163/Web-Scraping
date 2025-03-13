@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Summary</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h2>Latest News Summary</h2>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Summary</th>
+            <th>Sentiment</th>
+            <th>Link</th>
+        </tr>
+        {% for news in news %}
+        <tr>
+            <td>{{ news["Title"] }}</td>
+            <td>{{ news["Summary"] }}</td>
+            <td>{{ news["Sentiment"] }}</td>
+            <td><a href="{{ news['Link'] }}" target="_blank">Read More</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
